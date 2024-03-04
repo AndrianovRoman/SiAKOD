@@ -17,27 +17,26 @@ export class Dek {
         this.btnAddRight = document.getElementById('addRight');
         this.btnAddRight.onclick = () => {
             this.addElemRight();
-            console.log(this.arrayDek);
+            this.printAllElem();
         }
         this.btnAddLeft = document.getElementById('addLeft');
         this.btnAddLeft.onclick = () => {
             this.addElemLeft();
-            console.log(this.arrayDek);
+            this.printAllElem();
         }
         this.btnDeleteRight = document.getElementById('deleteRight');
         this.btnDeleteRight.onclick = () => {
             this.deleteElemRight();
-            console.log(this.arrayDek);
+            this.printAllElem();
         }
         this.btnDeleteLeft = document.getElementById('deleteLeft');
         this.btnDeleteLeft.onclick = () => {
             this.deleteElemLeft();
-            console.log(this.arrayDek);
+            this.printAllElem();
         }
         this.btnFind = document.getElementById('find');
         this.btnFind.onclick = () => {
             this.findElem();
-            console.log(this.arrayDek);
         }
         this.btnPrintAll = document.getElementById('printAll');
         this.btnPrintAll.onclick = () => {
@@ -95,7 +94,16 @@ export class Dek {
     }
 
     printAllElem() {
-        console.log(this.arrayDek);
+        let a = this.rear;
+        let arr = [];
+        for (let i = 0; i < this.n; i++) {
+            if(a === -1){
+                a = this.n-1;
+            }
+            arr.push(this.arrayDek[a]);
+            a--;
+        }
+        console.log(arr);
     }
 
 }
